@@ -21,5 +21,4 @@ input()
 print("2 colheres de chá de extrato de baunilha")
 input()
 print("1 xícara de água fervente")
-input()
 # %%
