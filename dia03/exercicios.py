@@ -13,37 +13,37 @@ elif agua == "2":
     print("Preço total:", preco)
 
 # %%
+valor = 0
 
-sorvetes = ["Casquinha", "Cascão", "Cestinha"]
-print("[1] Casquinha\n")
-print("[2] Cascão\n")
-print("[3] Cestinha")
-sorvete = input("Escolha um sorvete:")
+tipo_sorvete = input("Escolha um sorvete:").lower()
+sabor = input("Escolha seu sabor[Morango, Creme, Chocolate]:").lower()
+cobertura = input("Escolha sua cobertura:").lower()
 
-if sorvete == "1":
-    valor = 1.50
-elif sorvete == "2":
-    valor = 2.50
-elif sorvete == "3":
-    valor = 4.00
+sorvetes = {
+    "Casquinha" : 1.00, 
+    "Cascão" : 2.50, 
+    "Cestinha" : 4.00
+}
+
+coberturas = {
+    "Caramelo" : 1.50,
+    "Morango" : 1.50,
+    "Chocolate" : 1.50,
+    "": 0
+}
+
+sabores = ["Morango", "Creme", "Chocolate"]
+
+if tipo_sorvete in sorvetes:
+    valor += sorvetes[tipo_sorvete]
 else:
-    pass
+    print("Esse tipo não está em nosso catálogo")
 
-print("[1] Morango\n")
-print("[2] Creme\n")
-print("[3] Chocolate")
-sabor = input("Escolha seu sabor:")
-
-print("[1] Caramelo\n")
-print("[2] Morango\n")
-print("[3] Chocolate")
-print("[4] Sem Cobertura")
-cobertura = input("Escolha sua cobertura:")
-
-if cobertura == "1" or cobertura == "2" or cobertura == "3":
-    valor += 1.50
+if cobertura in coberturas:
+    valor += coberturas[cobertura]
 else:
-    pass
+    print("Essa cobertura não está em nosso catálogo")
+
 
 print("Valor total a ser pago:", valor)
 # %%
