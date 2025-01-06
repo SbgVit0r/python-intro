@@ -1,3 +1,5 @@
+import random
+
 def checar_entrada():
     """
     Solicita ao usuário que digite um número e tenta convertê-lo para um inteiro.
@@ -42,7 +44,7 @@ def valida_entrada():
         if checar_intervalo(numero):
             return numero
 
-numero_sorteado = 7
+numero_sorteado = random.randint(1,15)
 
 for i in range(3):
     print("Tentativa", i+1)
