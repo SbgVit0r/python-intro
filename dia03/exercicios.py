@@ -1,23 +1,28 @@
 #%%
 
-print("Escolha uma água:\n")
-print("[1] Mineral\n")
-print("[2] Com gás")
-agua = input()
+preco = 0
+
+aguas = {
+    "Mineral" : 1.50,
+    "Com gás" : 2.50
+}
+
+agua = input("Escolha uma água (Mineral, Com gás):").capitalize()
+
 quantidade = int(input("Quantas garrafas?"))
-if agua == "1":
-    preco = 1.50 * quantidade
-    print("Preço total:", preco)
-elif agua == "2":
-    preco = 2.50 * quantidade
-    print("Preço total:", preco)
+
+if agua in aguas:
+    preco += aguas[agua]
+    preco *= quantidade
+    
+print("Valor total", preco)
 
 # %%
 valor = 0
 
-tipo_sorvete = input("Escolha um sorvete:").lower()
-sabor = input("Escolha seu sabor[Morango, Creme, Chocolate]:").lower()
-cobertura = input("Escolha sua cobertura:").lower()
+tipo_sorvete = input("Escolha um sorvete:").capitalize()
+sabor = input("Escolha seu sabor[Morango, Creme, Chocolate]:").capitalize()
+cobertura = input("Escolha sua cobertura:").capitalize()
 
 sorvetes = {
     "Casquinha" : 1.00, 
@@ -106,6 +111,3 @@ while True:
     valores += float(deposito)
 
 print(valores)
-# %%
-print(False * 8)
-# %%
